@@ -1,5 +1,6 @@
 <html>
   <head>
+    <title>Bank of Los Santos</title>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <!-- Bootstrap core CSS -->
@@ -32,8 +33,8 @@
 
         <hr class="my-4 pb-2">
 
-        <button class="btn blue-gradient btn-rounded">Se connecter <i class="far fa-id-badge ml-1"></i></button>
-        <button class="btn btn-indigo btn-rounded">Prise de rendez-vous <i class="fas fa-envelope-open ml-1"></i></button>
+        <a href="login.php" class="btn blue-gradient btn-rounded">Se connecter <i class="far fa-id-badge ml-1"></i></a>
+        <a class="btn btn-indigo btn-rounded">Prise de rendez-vous <i class="fas fa-envelope-open ml-1"></i></a>
 
       </div>
     <!-- Jumbotron -->

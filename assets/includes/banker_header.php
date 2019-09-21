@@ -29,7 +29,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-              <a class="nav-link" href="#">Accueil</a>
+              <a class="nav-link" href="banker_home">Accueil</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="banker_account.php">Comptes Clients</a>
@@ -37,7 +37,7 @@
           </ul>
           <ul class="navbar-nav nav-flex-icons">
             <li class="nav-item">
-              <a class="nav-link">Se déconnecter</a>
+              <a class="nav-link" href="logout.php">Se déconnecter</a>
             </li>
           </ul>
         </div>
