@@ -1,3 +1,16 @@
+<?php
+session_start();
+
+if(isset($_SESSION['id'])){
+  if($_SESSION['rank'] == "0"){
+    header('Location: customer_home.php');
+  }else if($_SESSION['rank'] == "1"){
+    header('Location: banker_home.php');
+  }
+}
+
+?>
+
 <html>
   <head>
     <title>Bank of Los Santos</title>

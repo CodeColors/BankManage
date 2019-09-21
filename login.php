@@ -97,8 +97,8 @@
                 <label class="custom-control-label" for="customCheck1">Se souvenir </label>
               </div>
 
-              <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" name="signin" type="submit">Connection</button>
-
+              <button class="btn blue-gradient btn-rounded btn-block my-4 waves-effect z-depth-0" name="signin" type="submit">Connection</button>
+              <a class="btn aqua-gradient btn-rounded btn-block my-4 waves-effect z-depth-0" href="index.php">Retour</a>
 
             </form>
             </div>
