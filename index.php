@@ -47,7 +47,27 @@ if(isset($_SESSION['id'])){
         <hr class="my-4 pb-2">
 
         <a href="login.php" class="btn blue-gradient btn-rounded">Se connecter <i class="far fa-id-badge ml-1"></i></a>
-        <a class="btn btn-indigo btn-rounded">Prise de rendez-vous <i class="fas fa-envelope-open ml-1"></i></a>
+        <!-- Central Modal Small -->
+        <div class="modal fade top" id="contact" tabindex="-1" role="dialog" aria-labelledby="exampleModalPreviewLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalPreviewLabel">Contact</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                Merci de contacter un banquier via l'adresse e-mail suivante : <b>x@discord.gg</b>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-indigo btn-rounded" data-dismiss="modal">Fermer</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Central Modal Small -->
+        <a class="btn btn-indigo btn-rounded" type="button" class="btn btn-danger" data-toggle="modal" data-target="#contact">Prise de rendez-vous <i class="fas fa-envelope-open ml-1"></i></a>
 
       </div>
     <!-- Jumbotron -->
