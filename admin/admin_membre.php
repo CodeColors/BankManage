@@ -1,16 +1,19 @@
 <?php
 session_start();
 if(!(isset($_SESSION['id']))){
-    header('Location: login.php');
+    header('Location: ../login.php');
 }else{
+  if($_SESSION['rank'] == "0" OR $_SESSION['rank'] == "1"){
+    header('Location: ../index.php');
+  }
+}
 
-if($_SESSION['rank'] == "0"){
-    header('Location: index.php');
-}{
+require('../assets/includes/db.php');
 
-
-require('db.php');
 if(isset($_POST['logb'])){
+    if($_POST['rank'] != "1" || $_POST ['rank'] != "2"){
+      header('Location: admin_membre.php');
+    }
     $pass_hache = password_hash($_POST['pass'], PASSWORD_DEFAULT);
 
     $req = $bdd->prepare('INSERT INTO users(user, pass, rank) VALUES(:user, :pass, :rank)');
@@ -27,14 +30,14 @@ $accounts = $bdd->query('SELECT * FROM users');
 
 <html>
     <head>
-        <title>Visa - Administration</title>
+        <title>BankManage</title>
         <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
         <link rel="stylesheet" type="text/css" href="css/style.css">
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
           <div class="container">
-            <a class="navbar-brand" href="visa-check.php">Visa - Interface Web</a>
+            <a class="navbar-brand" href="../banker_home.php">BankManage - Gestion des comptes</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -43,7 +46,7 @@ $accounts = $bdd->query('SELECT * FROM users');
               <ul class="navbar-nav ml-auto">
 
                   <!-- Here's the magic. Add the .animate and .slide-in classes to your .dropdown-menu and you're all set! -->
-                  <a class="btn btn-primary" href="visa-check.php">Retour</a>
+                  <a class="btn btn-primary" href="../banker_home.php">Retour</a>
                 </li>
               </ul>
             </div>
@@ -52,11 +55,11 @@ $accounts = $bdd->query('SELECT * FROM users');
         <div class="container">
             <br />
             <form method="post" class="form-signin">
-            <h1>Enregister un nouveau douanier</h1>
-            <label>Username :</label><input type="text" class="form-control" name="login" placeholder="Votre Pseudo" required autofocus/>
-            <label>Password :</label><input type="password"  class="form-control" name="pass" required/>
-            <label>Rang :</label><input type="text"  class="form-control" name="rank" required/>
-            <h5>0 = douanier de base / 1 = super-douaniers</h5>
+            <h1>Enregister un nouveau banquier</h1>
+            <label>Pseudonyme :</label><input type="text" class="form-control" name="login" placeholder="Votre Pseudo" required autofocus/>
+            <label>Mot de passe :</label><input type="password"  class="form-control" name="pass" required/>
+            <label>Rang :</label><input type="text" value="1" class="form-control" name="rank" required/>
+            <h5>1 = banquier / 2 = banquier(administrateur)</h5>
 
             <input type="submit" class="btn btn-lg btn-primary btn-block" name="logb" value="Create" />
         </form>
@@ -96,6 +99,4 @@ $accounts = $bdd->query('SELECT * FROM users');
 
 <?php
     $accounts->closeCursor();
-}
-}
 ?>

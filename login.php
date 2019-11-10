@@ -19,7 +19,7 @@
 
         if($_SESSION['rank'] == "0"){
           header('Location: customer_home.php');
-        }else if($_SESSION['rank'] == "1"){
+        }else if($_SESSION['rank'] == "1" OR $_SESSION['rank'] == "2"){
           header('Location: banker_home.php');
         }
     }
@@ -49,7 +49,7 @@
 
                 if($_SESSION['rank'] == "0"){
                   header('Location: customer_home.php');
-                }else if($_SESSION['rank'] == "1"){
+                }else if($_SESSION['rank'] == "1" OR $_SESSION['rank'] == "2"){
                   header('Location: banker_home.php');
                 }
             }else{

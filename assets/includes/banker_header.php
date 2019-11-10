@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <html>
   <head>
 
@@ -36,6 +40,11 @@
             </li>
           </ul>
           <ul class="navbar-nav nav-flex-icons">
+            <?php if($_SESSION['rank'] == "2"){ ?>
+              <li class="nav-item">
+                <a class="nav-link" href="admin/admin_membre.php">Administration</a>
+              </li>
+            <?php } ?>
             <li class="nav-item">
               <a class="nav-link" href="logout.php">Se déconnecter</a>
             </li>
